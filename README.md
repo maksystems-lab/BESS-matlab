@@ -1,2 +1,44 @@
 # BESS-matlab
-matlab simulations for BESS dispatch -rule based and LP optimization
+MATLAB Simulation of BESS Dispatch Using Rule Based and LP Methods
+
+
+# bess dispatch — matlab
+
+Simulations I built while reading up on battery storage 
+optimization before a research internship. work in progress.
+
+---
+
+## project 1 — rule based dispatch
+
+### what this does
+runs a 24 hour simulation of a small battery (100 kwh) 
+connected to a building and some rooftop solar. no 
+optimization — just simple logic: if solar is producing 
+more than needed, charge the battery. if not, use it.
+
+### what i found
+the battery drained itself in the first 5 hours (1am to 
+5am) when the building load was actually pretty low. by 
+the time the evening peak hit around hour 17-20 where 
+grid import was highest, the battery was already empty 
+and couldn't do anything useful.
+
+so the rule based approach kind of does the opposite of 
+what you'd want — wastes the charge when its not needed 
+and has nothing left when it is.
+
+### next step
+project 2 will use linear programming (linprog) to 
+actually optimize when to charge and discharge based on 
+electricity prices. should fix this problem.
+
+### setup
+just run dispatch_rule.m in matlab. no toolboxes needed.
+
+### parameters used
+- capacity: 100 kwh
+- max power: 50 kw
+- efficiency: 95%
+- soc range: 20 to 90%
+- starting soc: 50%
