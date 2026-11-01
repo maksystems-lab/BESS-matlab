@@ -1,6 +1,6 @@
 # BESS-matlab
 MATLAB Simulation of BESS Dispatch Using Rule Based and LP Methods. Simulations I built while reading up on battery storage optimization before a research internship. Work in progress!!...
-
+MATLAB study of rule-based battery energy storage dispatch; LP optimisation planned
 ---
 
 ## Project 1 — Rule based dispatch
